@@ -82,7 +82,7 @@ const HeroSection = () => {
         </div>
         
         <div className="mt-12 lg:mt-0 lg:w-1/2 flex justify-center animate-float">
-          <img alt="Devcation 25" className="max-w-full lg:max-w-md rounded-lg shadow-2xl transform rotate-3" src="/lovable-uploads/4b4f085c-70ba-4692-9469-70283dafec6d.jpg" />
+          <img alt="Devcation 25" className="max-w-full lg:max-w-md rounded-lg shadow-2xl transform rotate-3" src="/images/devcation25.jpg" />
         </div>
       </div>
       
