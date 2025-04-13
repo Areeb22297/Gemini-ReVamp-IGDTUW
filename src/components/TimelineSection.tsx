@@ -106,7 +106,8 @@ const TimelineSection = () => {
                 {/* Icon container with z-index-10 to place it above the line */}
                 <div className="absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center z-10">
                 {/* <div className="h-12 w-12 rounded-full bg-[oklch(28.2%_0.091_267.935)] bg-opacity-50 flex items-center justify-center border-2 border-white/10 shadow-lg z-10 backdrop-blur-md"> */}
-                  <div className="h-12 w-12 rounded-full bg-[oklch(28.2%_0.091_267.935)/50%] flex items-center justify-center border-2 border-white/10 shadow-lg z-10 backdrop-blur-md">
+                  {/* <div className="h-12 w-12 rounded-full bg-[oklch(28.2%_0.091_267.935)/50%] flex items-center justify-center border-2 border-white/10 shadow-lg z-10 backdrop-blur-md"> */}
+                  <div className="h-12 w-12 rounded-full flex items-center justify-center bg-card/70 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 group animate-fade-in">
                   {/* <div className="h-12 w-12 rounded-full bg-custom-blue flex items-center justify-center border-2 border-white/10 shadow-lg z-10 backdrop-blur-lg"> */}
                     {event.icon}
                   </div>
