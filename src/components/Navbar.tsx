@@ -1,6 +1,4 @@
-
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
 
 const Navbar = () => {
@@ -29,10 +27,10 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <Link to="/" className="flex items-center">
-                <img alt="Google Developer Groups on Campus" className="h-8" src="/images/GDC.png" />
+              <a href="/#home" className="flex items-center">
+                <img alt="Google Developer Groups on Campus" className="h-8" src="/lovable-uploads/d5bedfa1-1b47-4a0c-81f6-9712ab0a3098.png" />
                 <span className="ml-2 text-white font-medium hidden md:block">GDG IGDTUW</span>
-              </Link>
+              </a>
             </div>
           </div>
           

@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { Calendar, Clock, Rocket, Award, Users } from 'lucide-react';
 
@@ -8,35 +7,35 @@ const TimelineSection = () => {
       title: "Opening Ceremony & Registration",
       description: "Submission for all Mini Events and the Registration for the Hackathon Starts",
       date: "April 4th, 2025",
-      icon: <Calendar className="h-6 w-6" />,
+      icon: <Calendar className="h-6 w-6 text-white" />,
       color: "devcation-teal",
     },
     {
       title: "Hacking Period Starts!",
       description: "Get ready to code, create, and innovate!",
       date: "April 8th, 2025",
-      icon: <Rocket className="h-6 w-6" />,
+      icon: <Rocket className="h-6 w-6 text-white" />,
       color: "devcation-pink",
     },
     {
       title: "Hacking Period Ends",
       description: "Make sure to wrap up your projects and prepare for submission.",
       date: "April 12th, 2025",
-      icon: <Clock className="h-6 w-6" />,
+      icon: <Clock className="h-6 w-6 text-white" />,
       color: "devcation-yellow",
     },
     {
       title: "Mentorship Round Starts",
       description: "Providing mentorship and feedback for every submitted project",
       date: "April 13th, 2025",
-      icon: <Users className="h-6 w-6" />,
+      icon: <Users className="h-6 w-6 text-white" />,
       color: "devcation-lavender",
     },
     {
       title: "Winners Announcement",
       description: "Final results and prize distribution",
       date: "April 16th, 2025",
-      icon: <Award className="h-6 w-6" />,
+      icon: <Award className="h-6 w-6 text-white" />,
       color: "devcation-orange",
     }
   ];
@@ -84,7 +83,8 @@ const TimelineSection = () => {
         
         {/* Desktop Timeline */}
         <div className="hidden md:block relative">
-          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1.5 timeline-line"></div>
+          {/* Timeline line - now with z-index-0 to ensure it stays behind everything */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1.5 timeline-line z-0"></div>
           
           <div className="space-y-20">
             {timelineEvents.map((event, index) => (
@@ -103,8 +103,9 @@ const TimelineSection = () => {
                   </div>
                 </div>
                 
-                <div className="absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center z-20">
-                  <div className={`h-12 w-12 rounded-full bg-${event.color}/30 border-2 border-${event.color} flex items-center justify-center shadow-lg pulse-${event.color} z-10`}>
+                {/* Icon container with z-index-10 to place it above the line */}
+                <div className="absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center z-10">
+                  <div className={`h-12 w-12 rounded-full bg-${event.color} flex items-center justify-center shadow-lg pulse-${event.color} z-10`}>
                     {event.icon}
                   </div>
                 </div>
@@ -115,7 +116,8 @@ const TimelineSection = () => {
         
         {/* Mobile Timeline */}
         <div className="md:hidden relative">
-          <div className="absolute left-4 top-0 h-full w-1.5 timeline-line-mobile"></div>
+          {/* Mobile timeline line - now with z-index-0 to ensure it stays behind everything */}
+          <div className="absolute left-4 top-0 h-full w-1.5 timeline-line-mobile z-0"></div>
           
           <div className="space-y-10">
             {timelineEvents.map((event, index) => (
@@ -124,9 +126,10 @@ const TimelineSection = () => {
                 className="ml-12 relative timeline-item opacity-0 translate-x-[-30px]"
                 style={{ transitionDelay: `${index * 0.2}s` }}
               >
-                <div className="absolute -left-12 top-4 flex items-center justify-center z-20">
-                  <div className={`h-8 w-8 rounded-full bg-${event.color}/30 border-2 border-${event.color} flex items-center justify-center shadow-lg pulse-${event.color} z-10`}>
-                    {React.cloneElement(event.icon, { className: "h-4 w-4" })}
+                {/* Mobile icon container with z-index-10 to place it above the line */}
+                <div className="absolute -left-12 top-4 flex items-center justify-center z-10">
+                  <div className={`h-8 w-8 rounded-full bg-${event.color} flex items-center justify-center shadow-lg pulse-${event.color} z-10`}>
+                    {React.cloneElement(event.icon, { className: "h-4 w-4 text-white" })}
                   </div>
                 </div>
                 

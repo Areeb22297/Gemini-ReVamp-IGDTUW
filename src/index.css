@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -98,6 +97,7 @@
     transition: height 1.5s ease-out;
   }
   
+  /* Updated animation for timeline items to handle both left and right sides */
   .animate-timeline-enter {
     animation: timeline-item-enter 0.8s ease-out forwards;
   }
@@ -105,7 +105,7 @@
   @keyframes timeline-item-enter {
     0% {
       opacity: 0;
-      transform: translateX(-50px);
+      transform: translateX(var(--translate-x, -50px));
     }
     100% {
       opacity: 1;
